@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+body > div:first-child,
+.App {
+  height: 100%;
+}
+
+body {
+  font-family: Lato, sans-serif;
+}
