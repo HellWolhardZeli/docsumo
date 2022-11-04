@@ -26,11 +26,16 @@ function Login() {
       setValidEmail(true);
       setLoading(true);
       signIn(email, password).then(({ data }) => {
+        console.log(data);
         setData(data);
-        const userData = JSON.stringify(data.user);
-        localStorage.setItem("currentUser", userData);
+        if (data && data.user) {
+          const userData = JSON.stringify(data.user);
+          localStorage.setItem("currentUser", userData);
+          console.log("SKAJd", userData);
+          window.location.href = "/welcome";
+        }
+
         setLoading(false);
-        window.location.href = "/welcome";
       });
     } else {
       setValidEmail(false);
